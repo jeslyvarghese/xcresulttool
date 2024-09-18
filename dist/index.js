@@ -1407,14 +1407,14 @@ class Parser {
             const args = [
                 'xcresulttool',
                 'export',
-                '--type',
-                'file',
+                'attachments',
                 '--path',
                 this.bundlePath,
                 '--output-path',
                 outputPath,
-                '--id',
-                reference
+                '--test-id',
+                reference,
+                '--only-failures'
             ];
             const options = {
                 silent: true
@@ -1444,6 +1444,7 @@ class Parser {
             const args = [
                 'xcresulttool',
                 'get',
+                'test-report',
                 '--path',
                 this.bundlePath,
                 '--format',
